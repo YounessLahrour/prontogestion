@@ -3,21 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <title>Notificación de YuniTic</title>
+    <title>Llamado de emergencia</title>
 </head>
 <body>
-    <p>Hola! {{$cliente->nombre}}, {{$cliente->apellido}}</p>
-    <p>Desde YiniTic, nos ponemos en contacto con usted, para comunicarle que su equipo: </p>
+    
+    <p>Estos son los datos del cliente que ha realizado la consulta:</p>
     <ul>
-        <li>Marca: {{$ordene->marcaEquipo}}</li>
-        <li>Modelo: {{$ordene->modeloEquipo}}</li>
-        <li>Estado: {{$ordene->estadoOrden}}</li>
+        <li>Nombre: {{ $nombre }} {{$apellido}}</li>
+        <li>Teléfono: {{ $telefono }}</li>
     </ul>
-    <p>Está listo para recogerlo, no olvide el Nº de Serial: {{$ordene->serialOrden}}</p>
+    <p>Ubicación del cliente</p>
     <ul>
-        <li>precio: {{$ordene->pvp}}€</li>
+        <li>Latitud: {{ $lat }}</li>
+        <li>Longitud: {{ $lng }}</li>
+        <li>
+            <a href="https://www.google.com/maps/dir/{{ $lat }},{{ $lng }}">
+                Ver en Google Maps
+            </a>
+        </li>
     </ul>
-    <p></p>
 </body>
 </html>
-
